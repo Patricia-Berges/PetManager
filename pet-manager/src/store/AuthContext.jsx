@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
             toast("Welcome Back! <3", { position: 'top-center', theme: 'colored', closeOnClick: true, transition: Zoom, autoClose: 2000, hideProgressBar: true, theme: "dark" })
         } catch (error) {
             toast.error("Error logging in!", { position: 'top-center', hideProgressBar: true, theme: 'colored', closeOnClick: true, transition: Bounce, className: "text-center" })
-            set({ loading: false });
+            setLoading(false);
             console.log("Login error:", error.message);
         }
         setLoading(false);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
             console.log("Logout error:", error.message);
             toast.error("Error logging out", { position: 'top-center', hideProgressBar: true, theme: 'colored', closeOnClick: true, transition: Bounce })
-            set({ loading: false });
+            setLoading(false);
         }
         setLoading(false);
     };
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
 
         } catch (error) {
             toast.error("Error regestering!", { position: 'top-center', hideProgressBar: true, theme: 'colored', closeOnClick: true, transition: Bounce })
-            set({ loading: false });
+            setLoading(false);
             console.log("Registration error:", error.message);
         }
         setLoading(false);

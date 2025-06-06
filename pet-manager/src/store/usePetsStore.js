@@ -35,7 +35,7 @@ const usePetsStore = create((set) => ({
 
         if (fileResponse?.$id) {
           const fileId = fileResponse.$id;
-          imageUrl = storage.getFilePreview(STORAGE_ID, fileId);
+          imageUrl = storage.getFileView(STORAGE_ID, fileId);
         }
       }
 
